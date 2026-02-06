@@ -4,6 +4,7 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Engramme Assistant — Beta Evaluation Guide</title>
+  <link rel="icon" type="image/svg+xml" href="favicon.svg">
   <script src="https://cdn.tailwindcss.com"></script>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -37,8 +38,13 @@
     .nav-link:hover, .nav-link.active { color: #151211; border-left-color: #262626; }
     .step-card { transition: all 0.2s; }
     .step-card:hover { box-shadow: 0 4px 12px rgba(0,0,0,0.06); }
-    .section-img { border-radius: 1rem; border: 1px solid #e9e8e7; }
-    .phone-img { max-width: 280px; border-radius: 2rem; border: 1px solid #e9e8e7; }
+    .section-img { border-radius: 1rem; border: 1px solid #e9e8e7; cursor: zoom-in; transition: transform 0.2s, box-shadow 0.2s; }
+    .section-img:hover { transform: scale(1.02); box-shadow: 0 8px 24px rgba(0,0,0,0.12); }
+    .phone-img { max-width: 280px; border-radius: 2rem; border: 1px solid #e9e8e7; cursor: zoom-in; transition: transform 0.2s, box-shadow 0.2s; }
+    .phone-img:hover { transform: scale(1.02); box-shadow: 0 8px 24px rgba(0,0,0,0.12); }
+    .lightbox { display: none; position: fixed; inset: 0; background: rgba(0,0,0,0.7); z-index: 100; justify-content: center; align-items: center; cursor: zoom-out; backdrop-filter: blur(4px); }
+    .lightbox.active { display: flex; }
+    .lightbox img { max-width: 90vw; max-height: 90vh; border-radius: 1rem; box-shadow: 0 24px 58px rgba(0,0,0,0.25); }
     @media (max-width: 1024px) {
       .sidebar { display: none; }
       .main-content { margin-left: 0 !important; }
@@ -189,10 +195,10 @@
         <div class="step-card bg-white border border-border-light rounded-2xl p-6 mb-6">
           <h3 class="text-lg font-semibold text-text-heading mb-4">1. Download the Extension</h3>
           <div class="space-y-3">
-            <p class="text-sm text-text-body"><strong>1.1.</strong> Download the extension files called <code class="bg-bg-subtle px-2 py-0.5 rounded text-sm">engramme_extension.zip</code> from the shared folder.</p>
+            <p class="text-sm text-text-body"><strong>1.1.</strong> Download the extension files called <code class="bg-bg-subtle px-2 py-0.5 rounded text-sm">engramme_extension.zip</code> from <a href="https://drive.google.com/drive/folders/1qdT0-04iuIAaKOY3onGI1M_wuQ0CIDe6?usp=drive_link" target="_blank" class="text-primary underline font-medium">this folder</a>.</p>
             <p class="text-sm text-text-body"><strong>1.2.</strong> Unzip the file by double clicking; you should now see a folder titled <code class="bg-bg-subtle px-2 py-0.5 rounded text-sm">engramme_extension</code>.</p>
             <div class="bg-accent-gold/10 border border-accent-gold/30 rounded-xl p-4 mt-3">
-              <p class="text-sm text-text-body"><strong>To update:</strong> If you already downloaded the extension files, please <strong>DELETE THE EXISTING FOLDER</strong> in your local drive. Then, re-download the extension files from the shared folder.</p>
+              <p class="text-sm text-text-body"><strong>To update:</strong> If you already downloaded the extension files, please <strong>DELETE THE EXISTING FOLDER</strong> in your local drive. Then, re-download the extension files from <a href="https://drive.google.com/drive/folders/1qdT0-04iuIAaKOY3onGI1M_wuQ0CIDe6?usp=drive_link" target="_blank" class="text-primary underline font-medium">this folder</a>.</p>
             </div>
           </div>
         </div>
@@ -265,10 +271,10 @@
               <p class="text-sm text-text-body"><strong>Repeated errors when logging in:</strong> After loading the chrome extension, every single tab that uses it needs to be refreshed as the extension's functionality won't be reflected until the tab is refreshed.</p>
             </div>
             <div class="bg-bg-subtle rounded-xl p-4">
-              <p class="text-sm text-text-body"><strong>Google sign in blocking you:</strong> Try using another account for signing in or just contact Guha Mahesh.</p>
+              <p class="text-sm text-text-body"><strong>Google sign in blocking you:</strong> Try using another account for signing in or just contact <a href="mailto:guha@engramme.com" class="underline font-medium">guha@engramme.com</a>.</p>
             </div>
             <div class="bg-bg-subtle rounded-xl p-4">
-              <p class="text-sm text-text-body"><strong>If everything fails:</strong> Contact Guha Mahesh.</p>
+              <p class="text-sm text-text-body"><strong>If everything fails:</strong> Contact <a href="mailto:guha@engramme.com" class="underline font-medium">guha@engramme.com</a>.</p>
             </div>
           </div>
         </div>
@@ -311,9 +317,9 @@
         <div class="step-card bg-white border border-border-light rounded-2xl p-6 mb-6">
           <h3 class="text-lg font-semibold text-text-heading mb-4">2. Get approved to download via TestFlight</h3>
           <div class="space-y-3">
-            <p class="text-sm text-text-body"><strong>2.1.</strong> TestFlight is the way we let you try out apps before we officially publish on the AppStore. <strong>Email Guha Mahesh</strong> the iCloud email you collected in step 1.</p>
+            <p class="text-sm text-text-body"><strong>2.1.</strong> TestFlight is the way we let you try out apps before we officially publish on the AppStore. Email <a href="mailto:guha@engramme.com" class="underline font-medium">guha@engramme.com</a> the iCloud email you collected in step 1.</p>
             <p class="text-sm text-text-body"><strong>2.2.</strong> You will receive an email invitation to our TestFlight organization. Check your junk folder if you don't see it.</p>
-            <p class="text-sm text-text-body"><strong>2.3.</strong> Once you have accepted this invite, email Guha Mahesh and we will invite you to use the Engramme app.</p>
+            <p class="text-sm text-text-body"><strong>2.3.</strong> Once you have accepted this invite, email <a href="mailto:guha@engramme.com" class="underline font-medium">guha@engramme.com</a> and we will invite you to use the Engramme app.</p>
             <p class="text-sm text-text-body"><strong>2.4.</strong> Go to the App Store and download <strong>TestFlight</strong>. Log in with the same iCloud email you found in step 1.</p>
             <p class="text-sm text-text-body"><strong>2.5.</strong> Click the TestFlight invitation and install the app from there.</p>
           </div>
@@ -342,16 +348,16 @@
           <h3 class="text-lg font-semibold text-text-heading mb-4">4. Troubleshooting</h3>
           <div class="space-y-4">
             <div class="bg-bg-subtle rounded-xl p-4">
-              <p class="text-sm text-text-body"><strong>Taking too long to get invited:</strong> Feel free to contact Guha Mahesh to get this done.</p>
+              <p class="text-sm text-text-body"><strong>Taking too long to get invited:</strong> Feel free to contact <a href="mailto:guha@engramme.com" class="underline font-medium">guha@engramme.com</a> to get this done.</p>
             </div>
             <div class="bg-bg-subtle rounded-xl p-4">
-              <p class="text-sm text-text-body"><strong>Didn't get an email:</strong> Check your spam and ensure you're on the same iCloud account that you emailed Guha Mahesh with.</p>
+              <p class="text-sm text-text-body"><strong>Didn't get an email:</strong> Check your spam and ensure you're on the same iCloud account that you emailed <a href="mailto:guha@engramme.com" class="underline font-medium">guha@engramme.com</a> with.</p>
             </div>
             <div class="bg-bg-subtle rounded-xl p-4">
               <p class="text-sm text-text-body"><strong>Can't find an iCloud account:</strong> You may need to create one at <a href="https://www.icloud.com/" target="_blank" class="underline">icloud.com</a>.</p>
             </div>
             <div class="bg-bg-subtle rounded-xl p-4">
-              <p class="text-sm text-text-body"><strong>If everything fails:</strong> Contact Guha Mahesh.</p>
+              <p class="text-sm text-text-body"><strong>If everything fails:</strong> Contact <a href="mailto:guha@engramme.com" class="underline font-medium">guha@engramme.com</a>.</p>
             </div>
           </div>
         </div>
@@ -606,7 +612,25 @@
 
   </main>
 
-  <!-- Active nav highlighting -->
+  <!-- Lightbox -->
+  <div class="lightbox" id="lightbox" onclick="this.classList.remove('active')">
+    <img id="lightbox-img" src="" alt="">
+  </div>
+
+  <!-- Active nav highlighting + lightbox -->
+  <script>
+    // Image lightbox
+    document.querySelectorAll('.section-img, .phone-img').forEach(img => {
+      img.addEventListener('click', () => {
+        document.getElementById('lightbox-img').src = img.src;
+        document.getElementById('lightbox').classList.add('active');
+      });
+    });
+    document.addEventListener('keydown', (e) => {
+      if (e.key === 'Escape') document.getElementById('lightbox').classList.remove('active');
+    });
+  </script>
+
   <script>
     const sections = document.querySelectorAll('section[id]');
     const navLinks = document.querySelectorAll('.nav-link');
