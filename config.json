@@ -1,0 +1,18 @@
+{
+  "paymentAmount": "$50",
+  "memoryCardGoal": "500",
+  "evaluationDays": "7",
+  "contactEmail": "guha@engramme.com",
+  "adminEmail": "admin@engramme.com",
+  "appUrl": "https://app.engramme.com",
+  "driveFolderUrl": "https://drive.google.com/drive/folders/1qdT0-04iuIAaKOY3onGI1M_wuQ0CIDe6?usp=drive_link",
+  "surveyUrl": "https://docs.google.com/forms/d/17BRPQ4gTJf6MrIAzy26Ija1zT8Tf2e_-SG1A9dwjMn4/edit",
+  "extensionZip": "engramme_extension.zip",
+  "extensionFolder": "engramme_extension",
+  "extensionMinVersion": "4.1.0",
+  "icloudUrl": "https://www.icloud.com/",
+  "tagline": "Omniscient AI to augment human cognition",
+  "version": "1/2/2026",
+  "integrationWaitTime": "24 hours",
+  "memoryInterval": "~30 seconds"
+}

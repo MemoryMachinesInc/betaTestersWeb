@@ -69,7 +69,7 @@
       <!-- Content area -->
       <div class="flex-1 px-6 flex items-center justify-between">
         <span class="text-sm text-text-body-light font-medium">Beta Evaluation Guide</span>
-        <a href="https://app.engramme.com" target="_blank" class="hidden sm:inline-flex items-center gap-2 bg-primary text-white px-5 py-2 rounded-xl text-sm font-medium hover:opacity-90 transition-opacity">
+        <a href="https://app.engramme.com" data-cfg-href="appUrl" target="_blank" class="hidden sm:inline-flex items-center gap-2 bg-primary text-white px-5 py-2 rounded-xl text-sm font-medium hover:opacity-90 transition-opacity">
           Open App
           <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14"/></svg>
         </a>
@@ -109,12 +109,12 @@
           App Installation &<br>Usage Instructions
         </h1>
         <p class="text-lg text-text-body leading-relaxed mb-8">
-          Thank you for helping us evaluate the Engramme Assistant. Your goal is to <strong>evaluate 500 memory cards in 7 days</strong>. You will receive <strong>$50</strong> after completion of the task.
+          Thank you for helping us evaluate the Engramme Assistant. Your goal is to <strong>evaluate <span data-cfg="memoryCardGoal">500</span> memory cards in <span data-cfg="evaluationDays">7</span> days</strong>. You will receive <strong><span data-cfg="paymentAmount">$50</span></strong> after completion of the task.
         </p>
         <div class="bg-white border border-border-light rounded-2xl p-6 space-y-3">
           <p class="text-sm font-semibold text-text-heading">Steps to complete:</p>
           <ol class="space-y-2 text-sm text-text-body">
-            <li class="flex gap-3"><span class="flex-shrink-0 w-6 h-6 rounded-full bg-primary text-white text-xs flex items-center justify-center font-medium">1</span> Sign the consent form and return to <a href="mailto:admin@engramme.com" class="underline">admin@engramme.com</a></li>
+            <li class="flex gap-3"><span class="flex-shrink-0 w-6 h-6 rounded-full bg-primary text-white text-xs flex items-center justify-center font-medium">1</span> Sign the consent form and return to <a href="mailto:admin@engramme.com" data-cfg-mailto="adminEmail" class="underline">admin@engramme.com</a></li>
             <li class="flex gap-3"><span class="flex-shrink-0 w-6 h-6 rounded-full bg-primary text-white text-xs flex items-center justify-center font-medium">2</span> Complete the Engramme AmbI evaluation eligibility form</li>
             <li class="flex gap-3"><span class="flex-shrink-0 w-6 h-6 rounded-full bg-primary text-white text-xs flex items-center justify-center font-medium">3</span> <a href="#signup" class="underline">Sign up and install integrations</a></li>
             <li class="flex gap-3"><span class="flex-shrink-0 w-6 h-6 rounded-full bg-primary text-white text-xs flex items-center justify-center font-medium">4</span> <a href="#chrome" class="underline">Install the Chrome extension</a></li>
@@ -141,7 +141,7 @@
           <h3 class="text-lg font-semibold text-text-heading mb-1">Create your account</h3>
           <div class="space-y-5 mt-4">
             <div>
-              <p class="text-sm text-text-body"><strong>1.1.</strong> Go to <a href="https://app.engramme.com/" target="_blank" class="text-primary underline font-medium">app.engramme.com</a></p>
+              <p class="text-sm text-text-body"><strong>1.1.</strong> Go to <a href="https://app.engramme.com/" data-cfg-href="appUrl" target="_blank" class="text-primary underline font-medium">app.engramme.com</a></p>
               <img src="images/image15.png" alt="Engramme login page" class="section-img mt-3 w-full max-w-md">
             </div>
             <div>
@@ -205,10 +205,10 @@
         <div class="step-card bg-white border border-border-light rounded-2xl p-6 mb-6">
           <h3 class="text-lg font-semibold text-text-heading mb-4">1. Download the Extension</h3>
           <div class="space-y-3">
-            <p class="text-sm text-text-body"><strong>1.1.</strong> Download the extension files called <code class="bg-bg-subtle px-2 py-0.5 rounded text-sm">engramme_extension.zip</code> from <a href="https://drive.google.com/drive/folders/1qdT0-04iuIAaKOY3onGI1M_wuQ0CIDe6?usp=drive_link" target="_blank" class="text-primary underline font-medium">this folder</a>.</p>
-            <p class="text-sm text-text-body"><strong>1.2.</strong> Unzip the file by double clicking; you should now see a folder titled <code class="bg-bg-subtle px-2 py-0.5 rounded text-sm">engramme_extension</code>.</p>
+            <p class="text-sm text-text-body"><strong>1.1.</strong> Download the extension files called <code class="bg-bg-subtle px-2 py-0.5 rounded text-sm" data-cfg="extensionZip">engramme_extension.zip</code> from <a href="https://drive.google.com/drive/folders/1qdT0-04iuIAaKOY3onGI1M_wuQ0CIDe6?usp=drive_link" data-cfg-href="driveFolderUrl" target="_blank" class="text-primary underline font-medium">this folder</a>.</p>
+            <p class="text-sm text-text-body"><strong>1.2.</strong> Unzip the file by double clicking; you should now see a folder titled <code class="bg-bg-subtle px-2 py-0.5 rounded text-sm" data-cfg="extensionFolder">engramme_extension</code>.</p>
             <div class="bg-accent-gold/10 border border-accent-gold/30 rounded-xl p-4 mt-3">
-              <p class="text-sm text-text-body"><strong>To update:</strong> If you already downloaded the extension files, please <strong>DELETE THE EXISTING FOLDER</strong> in your local drive. Then, re-download the extension files from <a href="https://drive.google.com/drive/folders/1qdT0-04iuIAaKOY3onGI1M_wuQ0CIDe6?usp=drive_link" target="_blank" class="text-primary underline font-medium">this folder</a>.</p>
+              <p class="text-sm text-text-body"><strong>To update:</strong> If you already downloaded the extension files, please <strong>DELETE THE EXISTING FOLDER</strong> in your local drive. Then, re-download the extension files from <a href="https://drive.google.com/drive/folders/1qdT0-04iuIAaKOY3onGI1M_wuQ0CIDe6?usp=drive_link" data-cfg-href="driveFolderUrl" target="_blank" class="text-primary underline font-medium">this folder</a>.</p>
             </div>
           </div>
         </div>
@@ -239,7 +239,7 @@
               <img src="images/image58.png" alt="Load unpacked button" class="section-img mt-3 w-full max-w-xs">
             </div>
             <div>
-              <p class="text-sm text-text-body"><strong>4.2.</strong> A file selection window will appear. Navigate to and select the folder named <code class="bg-bg-subtle px-2 py-0.5 rounded text-sm">engramme_extension</code> that you downloaded.</p>
+              <p class="text-sm text-text-body"><strong>4.2.</strong> A file selection window will appear. Navigate to and select the folder named <code class="bg-bg-subtle px-2 py-0.5 rounded text-sm" data-cfg="extensionFolder">engramme_extension</code> that you downloaded.</p>
               <img src="images/image31.png" alt="Select folder" class="section-img mt-3 w-full max-w-md">
             </div>
             <p class="text-sm text-text-body"><strong>4.3.</strong> If you installed a previous version, select the new version when you click Load Unpacked.</p>
@@ -263,7 +263,7 @@
               <img src="images/image76.png" alt="Sign in with Google" class="section-img mt-3 w-full max-w-xs">
             </div>
             <div>
-              <p class="text-sm text-text-body"><strong>5.3.</strong> Once all your integrations go through (which can take up to 24 hours), you will be able to view all your memories.</p>
+              <p class="text-sm text-text-body"><strong>5.3.</strong> Once all your integrations go through (which can take up to <span data-cfg="integrationWaitTime">24 hours</span>), you will be able to view all your memories.</p>
               <img src="images/image10.png" alt="Memories view" class="section-img mt-3 w-full max-w-md">
             </div>
           </div>
@@ -274,17 +274,17 @@
           <h3 class="text-lg font-semibold text-text-heading mb-4">6. Troubleshooting</h3>
           <div class="space-y-4">
             <div class="bg-bg-subtle rounded-xl p-4">
-              <p class="text-sm text-text-body"><strong>Unable to log in with Google:</strong> Go to <code class="bg-white px-2 py-0.5 rounded text-sm">chrome://extensions</code> and ensure that the ID matches the ID field in the screenshot below exactly. If it doesn't, ensure that the version is at least 4.1.0.</p>
+              <p class="text-sm text-text-body"><strong>Unable to log in with Google:</strong> Go to <code class="bg-white px-2 py-0.5 rounded text-sm">chrome://extensions</code> and ensure that the ID matches the ID field in the screenshot below exactly. If it doesn't, ensure that the version is at least <span data-cfg="extensionMinVersion">4.1.0</span>.</p>
               <img src="images/image80.png" alt="Extension ID" class="section-img mt-3 w-full max-w-md">
             </div>
             <div class="bg-bg-subtle rounded-xl p-4">
               <p class="text-sm text-text-body"><strong>Repeated errors when logging in:</strong> After loading the chrome extension, every single tab that uses it needs to be refreshed as the extension's functionality won't be reflected until the tab is refreshed.</p>
             </div>
             <div class="bg-bg-subtle rounded-xl p-4">
-              <p class="text-sm text-text-body"><strong>Google sign in blocking you:</strong> Try using another account for signing in or just contact <a href="mailto:guha@engramme.com" class="underline font-medium">guha@engramme.com</a>.</p>
+              <p class="text-sm text-text-body"><strong>Google sign in blocking you:</strong> Try using another account for signing in or just contact <a href="mailto:guha@engramme.com" data-cfg-mailto="contactEmail" class="underline font-medium">guha@engramme.com</a>.</p>
             </div>
             <div class="bg-bg-subtle rounded-xl p-4">
-              <p class="text-sm text-text-body"><strong>If everything fails:</strong> Contact <a href="mailto:guha@engramme.com" class="underline font-medium">guha@engramme.com</a>.</p>
+              <p class="text-sm text-text-body"><strong>If everything fails:</strong> Contact <a href="mailto:guha@engramme.com" data-cfg-mailto="contactEmail" class="underline font-medium">guha@engramme.com</a>.</p>
             </div>
           </div>
         </div>
@@ -338,16 +338,16 @@
           <h3 class="text-lg font-semibold text-text-heading mb-4">3. Troubleshooting</h3>
           <div class="space-y-4">
             <div class="bg-bg-subtle rounded-xl p-4">
-              <p class="text-sm text-text-body"><strong>Taking too long to get invited:</strong> Feel free to contact <a href="mailto:guha@engramme.com" class="underline font-medium">guha@engramme.com</a> to get this done.</p>
+              <p class="text-sm text-text-body"><strong>Taking too long to get invited:</strong> Feel free to contact <a href="mailto:guha@engramme.com" data-cfg-mailto="contactEmail" class="underline font-medium">guha@engramme.com</a> to get this done.</p>
             </div>
             <div class="bg-bg-subtle rounded-xl p-4">
-              <p class="text-sm text-text-body"><strong>Didn't get an email:</strong> Check your spam and ensure you're on the same iCloud account that you emailed <a href="mailto:guha@engramme.com" class="underline font-medium">guha@engramme.com</a> with.</p>
+              <p class="text-sm text-text-body"><strong>Didn't get an email:</strong> Check your spam and ensure you're on the same iCloud account that you emailed <a href="mailto:guha@engramme.com" data-cfg-mailto="contactEmail" class="underline font-medium">guha@engramme.com</a> with.</p>
             </div>
             <div class="bg-bg-subtle rounded-xl p-4">
-              <p class="text-sm text-text-body"><strong>Can't find an iCloud account:</strong> You may need to create one at <a href="https://www.icloud.com/" target="_blank" class="underline">icloud.com</a>.</p>
+              <p class="text-sm text-text-body"><strong>Can't find an iCloud account:</strong> You may need to create one at <a href="https://www.icloud.com/" data-cfg-href="icloudUrl" target="_blank" class="underline">icloud.com</a>.</p>
             </div>
             <div class="bg-bg-subtle rounded-xl p-4">
-              <p class="text-sm text-text-body"><strong>If everything fails:</strong> Contact <a href="mailto:guha@engramme.com" class="underline font-medium">guha@engramme.com</a>.</p>
+              <p class="text-sm text-text-body"><strong>If everything fails:</strong> Contact <a href="mailto:guha@engramme.com" data-cfg-mailto="contactEmail" class="underline font-medium">guha@engramme.com</a>.</p>
             </div>
           </div>
         </div>
@@ -378,13 +378,13 @@
         <div class="bg-accent-gold/10 border border-accent-gold/30 rounded-xl p-4 mb-10">
           <p class="text-sm text-text-body"><strong>Important:</strong> Before starting to use the app during conversation, be sure to seek consent from all parties.</p>
         </div>
-        <p class="text-text-body leading-relaxed mb-10">As you talk, memories will surface automatically every ~30 seconds. These memories are related to what the conversation is about.</p>
+        <p class="text-text-body leading-relaxed mb-10">As you talk, memories will surface automatically every <span data-cfg="memoryInterval">~30 seconds</span>. These memories are related to what the conversation is about.</p>
 
         <div class="step-card bg-white border border-border-light rounded-2xl p-6 mb-6">
           <h3 class="text-lg font-semibold text-text-heading mb-4">How to Start Recording</h3>
           <div class="space-y-5">
             <div>
-              <p class="text-sm text-text-body">When you open <a href="https://app.engramme.com" target="_blank" class="underline font-medium">app.engramme.com</a>, you'll be greeted with the following screen.</p>
+              <p class="text-sm text-text-body">When you open <a href="https://app.engramme.com" data-cfg-href="appUrl" target="_blank" class="underline font-medium">app.engramme.com</a>, you'll be greeted with the following screen.</p>
               <img src="images/image62.png" alt="Homepage" class="section-img mt-3 w-full max-w-lg">
             </div>
             <div>
@@ -466,7 +466,7 @@
               <img src="images/image6.png" alt="iOS app home" class="phone-img mt-3">
             </div>
             <div>
-              <p class="text-sm text-text-body">To begin recording your conversation and see memories surface, click on the <strong>microphone</strong> in the bottom-left. This will start recording and surface memories every 30 seconds (you can change this interval in settings).</p>
+              <p class="text-sm text-text-body">To begin recording your conversation and see memories surface, click on the <strong>microphone</strong> in the bottom-left. This will start recording and surface memories every <span data-cfg="memoryInterval">~30 seconds</span> (you can change this interval in settings).</p>
               <img src="images/image2.png" alt="iOS microphone" class="phone-img mt-3">
             </div>
             <div class="bg-bg-subtle rounded-xl p-4">
@@ -602,7 +602,7 @@
         <h2 class="text-3xl font-bold text-text-heading tracking-tight mb-3">Post Evaluation Survey</h2>
         <p class="text-text-body leading-relaxed mb-8">After completing your evaluations, please fill out the post evaluation survey.</p>
 
-        <a href="https://docs.google.com/forms/d/17BRPQ4gTJf6MrIAzy26Ija1zT8Tf2e_-SG1A9dwjMn4/edit" target="_blank" class="inline-flex items-center gap-2 bg-primary text-white px-6 py-3 rounded-xl text-sm font-medium hover:opacity-90 transition-opacity mb-10">
+        <a href="https://docs.google.com/forms/d/17BRPQ4gTJf6MrIAzy26Ija1zT8Tf2e_-SG1A9dwjMn4/edit" data-cfg-href="surveyUrl" target="_blank" class="inline-flex items-center gap-2 bg-primary text-white px-6 py-3 rounded-xl text-sm font-medium hover:opacity-90 transition-opacity mb-10">
           Open Survey
           <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14"/></svg>
         </a>
@@ -625,8 +625,8 @@
     <!-- Footer -->
     <footer class="px-6 sm:px-12 lg:px-20 py-8 border-t border-border-light bg-bg-cream">
       <div class="max-w-3xl flex items-center justify-between">
-        <p class="text-sm text-text-body-light">Engramme &mdash; Omniscient AI to augment human cognition</p>
-        <p class="text-xs text-text-body-light">Version 1/2/2026</p>
+        <p class="text-sm text-text-body-light">Engramme &mdash; <span data-cfg="tagline">Omniscient AI to augment human cognition</span></p>
+        <p class="text-xs text-text-body-light">Version <span data-cfg="version">1/2/2026</span></p>
       </div>
     </footer>
 
@@ -668,6 +668,200 @@
     }, { rootMargin: '-20% 0px -80% 0px' });
 
     sections.forEach(section => observer.observe(section));
+  </script>
+
+  <!-- Admin Panel -->
+  <style>
+    .admin-overlay { display:none; position:fixed; inset:0; background:rgba(0,0,0,0.4); z-index:199; backdrop-filter:blur(2px); }
+    .admin-overlay.open { display:block; }
+    .admin-panel { position:fixed; top:0; right:0; bottom:0; width:420px; max-width:100vw; background:#fff; z-index:200; transform:translateX(100%); transition:transform 0.3s ease; display:flex; flex-direction:column; box-shadow:-8px 0 30px rgba(0,0,0,0.15); }
+    .admin-panel.open { transform:translateX(0); }
+    .admin-field label { display:block; font-size:11px; font-weight:600; color:#787270; text-transform:uppercase; letter-spacing:0.05em; margin-bottom:4px; }
+    .admin-field input { width:100%; padding:8px 12px; border:1px solid #e9e8e7; border-radius:10px; font-size:14px; font-family:inherit; color:#2c2827; outline:none; transition:border-color 0.2s; }
+    .admin-field input:focus { border-color:#262626; }
+    .admin-section-title { font-size:13px; font-weight:700; color:#151211; margin-bottom:12px; padding-bottom:8px; border-bottom:1px solid #e9e8e7; }
+    .admin-btn { padding:10px 16px; border-radius:10px; font-size:13px; font-weight:600; cursor:pointer; transition:all 0.2s; border:none; font-family:inherit; }
+    .admin-btn-primary { background:#262626; color:#fff; }
+    .admin-btn-primary:hover { opacity:0.85; }
+    .admin-btn-secondary { background:#f4f3f3; color:#2c2827; border:1px solid #e9e8e7; }
+    .admin-btn-secondary:hover { background:#e9e8e7; }
+    .admin-toast { position:fixed; bottom:24px; right:24px; background:#262626; color:#fff; padding:12px 20px; border-radius:12px; font-size:13px; font-weight:500; z-index:300; opacity:0; transform:translateY(10px); transition:all 0.3s; pointer-events:none; }
+    .admin-toast.show { opacity:1; transform:translateY(0); }
+  </style>
+
+  <div class="admin-overlay" id="admin-overlay" onclick="closeAdmin()"></div>
+  <div class="admin-panel" id="admin-panel">
+    <div style="background:#262626; color:#fff; padding:16px 24px; display:flex; align-items:center; justify-content:space-between; flex-shrink:0;">
+      <div style="display:flex;align-items:center;gap:10px;">
+        <svg width="18" height="18" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10.325 4.317c.426-1.756 2.924-1.756 3.35 0a1.724 1.724 0 002.573 1.066c1.543-.94 3.31.826 2.37 2.37a1.724 1.724 0 001.066 2.573c1.756.426 1.756 2.924 0 3.35a1.724 1.724 0 00-1.066 2.573c.94 1.543-.826 3.31-2.37 2.37a1.724 1.724 0 00-2.573 1.066c-.426 1.756-2.924 1.756-3.35 0a1.724 1.724 0 00-2.573-1.066c-1.543.94-3.31-.826-2.37-2.37a1.724 1.724 0 00-1.066-2.573c-1.756-.426-1.756-2.924 0-3.35a1.724 1.724 0 001.066-2.573c-.94-1.543.826-3.31 2.37-2.37.996.608 2.296.07 2.572-1.065z"/><circle cx="12" cy="12" r="3"/></svg>
+        <span style="font-size:16px;font-weight:700;">Admin Panel</span>
+      </div>
+      <button onclick="closeAdmin()" style="background:none;border:none;color:rgba(255,255,255,0.7);cursor:pointer;padding:4px;" onmouseover="this.style.color='#fff'" onmouseout="this.style.color='rgba(255,255,255,0.7)'">
+        <svg width="20" height="20" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"/></svg>
+      </button>
+    </div>
+
+    <div style="flex:1;overflow-y:auto;padding:24px;display:flex;flex-direction:column;gap:24px;" id="admin-fields"></div>
+
+    <div style="border-top:1px solid #e9e8e7; padding:16px 24px; display:flex; gap:10px; flex-shrink:0;">
+      <button class="admin-btn admin-btn-primary" style="flex:1;" onclick="downloadConfig()">Download config.json</button>
+      <button class="admin-btn admin-btn-secondary" style="flex:1;" onclick="copyConfig()">Copy JSON</button>
+    </div>
+  </div>
+  <div class="admin-toast" id="admin-toast"></div>
+
+  <script>
+  (function() {
+    const ADMIN_PASS = 'mm-admin-pass';
+    const CONFIG_FIELDS = {
+      'Evaluation': [
+        { key: 'paymentAmount', label: 'Payment Amount', placeholder: '$50' },
+        { key: 'memoryCardGoal', label: 'Memory Card Goal', placeholder: '500' },
+        { key: 'evaluationDays', label: 'Evaluation Period (days)', placeholder: '7' },
+      ],
+      'Contact': [
+        { key: 'contactEmail', label: 'Contact Email', placeholder: 'guha@engramme.com' },
+        { key: 'adminEmail', label: 'Admin Email', placeholder: 'admin@engramme.com' },
+      ],
+      'URLs': [
+        { key: 'appUrl', label: 'App URL', placeholder: 'https://app.engramme.com' },
+        { key: 'driveFolderUrl', label: 'Google Drive Folder', placeholder: 'https://drive.google.com/...' },
+        { key: 'surveyUrl', label: 'Survey URL', placeholder: 'https://docs.google.com/...' },
+        { key: 'icloudUrl', label: 'iCloud URL', placeholder: 'https://www.icloud.com/' },
+      ],
+      'Extension': [
+        { key: 'extensionZip', label: 'Extension Zip Filename', placeholder: 'engramme_extension.zip' },
+        { key: 'extensionFolder', label: 'Extension Folder Name', placeholder: 'engramme_extension' },
+        { key: 'extensionMinVersion', label: 'Min Extension Version', placeholder: '4.1.0' },
+      ],
+      'Timing': [
+        { key: 'integrationWaitTime', label: 'Integration Wait Time', placeholder: '24 hours' },
+        { key: 'memoryInterval', label: 'Memory Surfacing Interval', placeholder: '~30 seconds' },
+      ],
+      'Footer': [
+        { key: 'tagline', label: 'Tagline', placeholder: 'Omniscient AI to augment human cognition' },
+        { key: 'version', label: 'Version', placeholder: '1/2/2026' },
+      ],
+    };
+
+    let currentConfig = {};
+    let defaultConfig = {};
+    let adminOpen = false;
+
+    // Load config.json and apply
+    fetch('config.json')
+      .then(r => r.json())
+      .then(cfg => {
+        defaultConfig = { ...cfg };
+        currentConfig = { ...cfg };
+        applyConfig(currentConfig);
+      })
+      .catch(() => console.warn('No config.json found, using page defaults.'));
+
+    function applyConfig(cfg) {
+      // data-cfg="key" → textContent
+      document.querySelectorAll('[data-cfg]').forEach(el => {
+        const key = el.getAttribute('data-cfg');
+        if (cfg[key] !== undefined) el.textContent = cfg[key];
+      });
+      // data-cfg-href="key" → href
+      document.querySelectorAll('[data-cfg-href]').forEach(el => {
+        const key = el.getAttribute('data-cfg-href');
+        if (cfg[key] !== undefined) el.href = cfg[key];
+      });
+      // data-cfg-mailto="key" → mailto:value + textContent
+      document.querySelectorAll('[data-cfg-mailto]').forEach(el => {
+        const key = el.getAttribute('data-cfg-mailto');
+        if (cfg[key] !== undefined) {
+          el.href = 'mailto:' + cfg[key];
+          el.textContent = cfg[key];
+        }
+      });
+    }
+
+    function buildAdminFields() {
+      const container = document.getElementById('admin-fields');
+      container.innerHTML = '';
+      for (const [section, fields] of Object.entries(CONFIG_FIELDS)) {
+        const sectionDiv = document.createElement('div');
+        sectionDiv.innerHTML = '<div class="admin-section-title">' + section + '</div>';
+        const fieldsDiv = document.createElement('div');
+        fieldsDiv.style.cssText = 'display:flex;flex-direction:column;gap:14px;';
+        for (const field of fields) {
+          const fieldDiv = document.createElement('div');
+          fieldDiv.className = 'admin-field';
+          const label = document.createElement('label');
+          label.textContent = field.label;
+          label.setAttribute('for', 'admin-' + field.key);
+          const input = document.createElement('input');
+          input.type = 'text';
+          input.id = 'admin-' + field.key;
+          input.value = currentConfig[field.key] || '';
+          input.placeholder = field.placeholder;
+          input.addEventListener('input', function() {
+            currentConfig[field.key] = this.value;
+            applyConfig(currentConfig);
+          });
+          fieldDiv.appendChild(label);
+          fieldDiv.appendChild(input);
+          fieldsDiv.appendChild(fieldDiv);
+        }
+        sectionDiv.appendChild(fieldsDiv);
+        container.appendChild(sectionDiv);
+      }
+    }
+
+    function showToast(msg) {
+      const toast = document.getElementById('admin-toast');
+      toast.textContent = msg;
+      toast.classList.add('show');
+      setTimeout(() => toast.classList.remove('show'), 2500);
+    }
+
+    window.openAdmin = function() {
+      buildAdminFields();
+      document.getElementById('admin-panel').classList.add('open');
+      document.getElementById('admin-overlay').classList.add('open');
+      adminOpen = true;
+    };
+
+    window.closeAdmin = function() {
+      document.getElementById('admin-panel').classList.remove('open');
+      document.getElementById('admin-overlay').classList.remove('open');
+      adminOpen = false;
+    };
+
+    window.downloadConfig = function() {
+      const blob = new Blob([JSON.stringify(currentConfig, null, 2) + '\n'], { type: 'application/json' });
+      const url = URL.createObjectURL(blob);
+      const a = document.createElement('a');
+      a.href = url;
+      a.download = 'config.json';
+      a.click();
+      URL.revokeObjectURL(url);
+      showToast('config.json downloaded');
+    };
+
+    window.copyConfig = function() {
+      navigator.clipboard.writeText(JSON.stringify(currentConfig, null, 2) + '\n')
+        .then(() => showToast('JSON copied to clipboard'))
+        .catch(() => showToast('Failed to copy'));
+    };
+
+    // Keyboard shortcut: Cmd+Shift+/
+    document.addEventListener('keydown', function(e) {
+      if (e.metaKey && e.shiftKey && (e.key === '/' || e.key === '?')) {
+        e.preventDefault();
+        if (adminOpen) { closeAdmin(); return; }
+        const pass = prompt('Enter admin password:');
+        if (pass === ADMIN_PASS) {
+          openAdmin();
+        } else if (pass !== null) {
+          showToast('Incorrect password');
+        }
+      }
+    });
+  })();
   </script>
 
 </body>
