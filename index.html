@@ -55,21 +55,30 @@
 
   <!-- Top Bar -->
   <header class="fixed top-0 left-0 right-0 bg-white/90 backdrop-blur-md border-b border-border-light z-50">
-    <div class="px-6 py-3 flex items-center justify-between">
-      <div class="flex items-center gap-2.5">
-        <img src="favicon.png" alt="Engramme" class="w-7 h-7">
-        <span class="text-xl font-bold text-text-heading tracking-tight">Engramme</span>
-        <span class="text-xs text-text-body-light font-medium border-l border-border-light pl-2.5 ml-0.5">Beta Evaluation Guide</span>
+    <div class="flex items-center h-[57px]">
+      <!-- Logo area — matches sidebar width on desktop -->
+      <div class="hidden lg:flex items-center gap-2.5 w-64 flex-shrink-0 border-r border-border-light px-6 h-full">
+        <img src="favicon.png" alt="Engramme" class="w-6 h-6">
+        <span class="text-lg font-bold text-text-heading tracking-tight">Engramme</span>
       </div>
-      <a href="https://app.engramme.com" target="_blank" class="hidden sm:inline-flex items-center gap-2 bg-primary text-white px-5 py-2 rounded-xl text-sm font-medium hover:opacity-90 transition-opacity">
-        Open App
-        <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14"/></svg>
-      </a>
+      <!-- Mobile logo -->
+      <div class="flex lg:hidden items-center gap-2.5 px-6">
+        <img src="favicon.png" alt="Engramme" class="w-6 h-6">
+        <span class="text-lg font-bold text-text-heading tracking-tight">Engramme</span>
+      </div>
+      <!-- Content area -->
+      <div class="flex-1 px-6 flex items-center justify-between">
+        <span class="text-sm text-text-body-light font-medium">Beta Evaluation Guide</span>
+        <a href="https://app.engramme.com" target="_blank" class="hidden sm:inline-flex items-center gap-2 bg-primary text-white px-5 py-2 rounded-xl text-sm font-medium hover:opacity-90 transition-opacity">
+          Open App
+          <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14"/></svg>
+        </a>
+      </div>
     </div>
   </header>
 
   <!-- Sidebar Navigation -->
-  <nav class="sidebar fixed top-[65px] left-0 bottom-0 w-64 bg-bg-cream border-r border-border-light overflow-y-auto py-8 px-4 z-40">
+  <nav class="sidebar fixed top-[57px] left-0 bottom-0 w-64 bg-bg-cream border-r border-border-light overflow-y-auto py-8 px-4 z-40">
     <div class="space-y-1">
       <p class="text-xs font-semibold text-text-body-light uppercase tracking-wider px-3 mb-3">Getting Started</p>
       <a href="#welcome" class="nav-link block px-3 py-2 text-sm text-text-body-light border-l-2 border-transparent rounded-r-lg">Welcome</a>
@@ -91,7 +100,7 @@
   </nav>
 
   <!-- Main Content -->
-  <main class="main-content ml-64 pt-[65px]">
+  <main class="main-content ml-64 pt-[57px]">
 
     <!-- Hero / Welcome -->
     <section id="welcome" class="px-6 sm:px-12 lg:px-20 py-16 lg:py-24 bg-bg-cream border-b border-border-light">
