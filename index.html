@@ -1,0 +1,630 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Engramme Assistant — Beta Evaluation Guide</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,100..1000;1,9..40,100..1000&display=swap" rel="stylesheet">
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            'text-heading': '#151211',
+            'text-body': '#2c2827',
+            'text-body-light': '#787270',
+            'bg-cream': '#faf9f5',
+            'bg-subtle': '#f4f3f3',
+            'border-light': '#e9e8e7',
+            'border-medium': '#8f8a88',
+            'accent-gold': '#e8a41a',
+            'primary': '#262626',
+          },
+          fontFamily: {
+            sans: ['DM Sans', 'system-ui', '-apple-system', 'sans-serif'],
+          },
+        }
+      }
+    }
+  </script>
+  <style>
+    html { scroll-behavior: smooth; }
+    body { font-family: 'DM Sans', system-ui, -apple-system, sans-serif; color: #2c2827; }
+    .nav-link { transition: all 0.2s; }
+    .nav-link:hover, .nav-link.active { color: #151211; border-left-color: #262626; }
+    .step-card { transition: all 0.2s; }
+    .step-card:hover { box-shadow: 0 4px 12px rgba(0,0,0,0.06); }
+    .section-img { border-radius: 1rem; border: 1px solid #e9e8e7; }
+    .phone-img { max-width: 280px; border-radius: 2rem; border: 1px solid #e9e8e7; }
+    @media (max-width: 1024px) {
+      .sidebar { display: none; }
+      .main-content { margin-left: 0 !important; }
+    }
+  </style>
+</head>
+<body class="bg-white">
+
+  <!-- Top Bar -->
+  <header class="fixed top-0 left-0 right-0 bg-white/90 backdrop-blur-md border-b border-border-light z-50">
+    <div class="max-w-screen-2xl mx-auto px-6 py-4 flex items-center justify-between">
+      <div class="flex items-center gap-3">
+        <span class="text-2xl font-bold text-text-heading tracking-tight">Engramme</span>
+        <span class="text-sm text-text-body-light font-medium">Beta Evaluation Guide</span>
+      </div>
+      <a href="https://app.engramme.com" target="_blank" class="hidden sm:inline-flex items-center gap-2 bg-primary text-white px-5 py-2 rounded-xl text-sm font-medium hover:opacity-90 transition-opacity">
+        Open App
+        <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14"/></svg>
+      </a>
+    </div>
+  </header>
+
+  <!-- Sidebar Navigation -->
+  <nav class="sidebar fixed top-[65px] left-0 bottom-0 w-64 bg-bg-cream border-r border-border-light overflow-y-auto py-8 px-4 z-40">
+    <div class="space-y-1">
+      <p class="text-xs font-semibold text-text-body-light uppercase tracking-wider px-3 mb-3">Getting Started</p>
+      <a href="#welcome" class="nav-link block px-3 py-2 text-sm text-text-body-light border-l-2 border-transparent rounded-r-lg">Welcome</a>
+      <a href="#signup" class="nav-link block px-3 py-2 text-sm text-text-body-light border-l-2 border-transparent rounded-r-lg">1. Sign Up & Integrate</a>
+      <a href="#chrome" class="nav-link block px-3 py-2 text-sm text-text-body-light border-l-2 border-transparent rounded-r-lg">2. Chrome Extension</a>
+      <a href="#ios" class="nav-link block px-3 py-2 text-sm text-text-body-light border-l-2 border-transparent rounded-r-lg">3. iOS App</a>
+
+      <p class="text-xs font-semibold text-text-body-light uppercase tracking-wider px-3 mb-3 mt-6">Using Engramme</p>
+      <a href="#conversations-web" class="nav-link block px-3 py-2 text-sm text-text-body-light border-l-2 border-transparent rounded-r-lg">Conversations (Web)</a>
+      <a href="#conversations-ios" class="nav-link block px-3 py-2 text-sm text-text-body-light border-l-2 border-transparent rounded-r-lg">Conversations (iOS)</a>
+      <a href="#web-browsing" class="nav-link block px-3 py-2 text-sm text-text-body-light border-l-2 border-transparent rounded-r-lg">Web Browsing</a>
+      <a href="#gmail" class="nav-link block px-3 py-2 text-sm text-text-body-light border-l-2 border-transparent rounded-r-lg">Gmail</a>
+      <a href="#ask-mode" class="nav-link block px-3 py-2 text-sm text-text-body-light border-l-2 border-transparent rounded-r-lg">Ask Mode</a>
+      <a href="#memory-card" class="nav-link block px-3 py-2 text-sm text-text-body-light border-l-2 border-transparent rounded-r-lg">Memory Card Guide</a>
+
+      <p class="text-xs font-semibold text-text-body-light uppercase tracking-wider px-3 mb-3 mt-6">Finish Up</p>
+      <a href="#survey" class="nav-link block px-3 py-2 text-sm text-text-body-light border-l-2 border-transparent rounded-r-lg">Post Evaluation Survey</a>
+    </div>
+  </nav>
+
+  <!-- Main Content -->
+  <main class="main-content ml-64 pt-[65px]">
+
+    <!-- Hero / Welcome -->
+    <section id="welcome" class="px-6 sm:px-12 lg:px-20 py-16 lg:py-24 bg-bg-cream border-b border-border-light">
+      <div class="max-w-3xl">
+        <h1 class="text-4xl lg:text-5xl font-bold text-text-heading tracking-tight leading-tight mb-6">
+          App Installation &<br>Usage Instructions
+        </h1>
+        <p class="text-lg text-text-body leading-relaxed mb-8">
+          Thank you for helping us evaluate the Engramme Assistant. Your goal is to <strong>evaluate 500 memory cards in 7 days</strong>. You will receive <strong>$50</strong> after completion of the task.
+        </p>
+        <div class="bg-white border border-border-light rounded-2xl p-6 space-y-3">
+          <p class="text-sm font-semibold text-text-heading">Steps to complete:</p>
+          <ol class="space-y-2 text-sm text-text-body">
+            <li class="flex gap-3"><span class="flex-shrink-0 w-6 h-6 rounded-full bg-primary text-white text-xs flex items-center justify-center font-medium">1</span> Sign the consent form and return to <a href="mailto:admin@engramme.com" class="underline">admin@engramme.com</a></li>
+            <li class="flex gap-3"><span class="flex-shrink-0 w-6 h-6 rounded-full bg-primary text-white text-xs flex items-center justify-center font-medium">2</span> Complete the Engramme AmbI evaluation eligibility form</li>
+            <li class="flex gap-3"><span class="flex-shrink-0 w-6 h-6 rounded-full bg-primary text-white text-xs flex items-center justify-center font-medium">3</span> <a href="#signup" class="underline">Sign up and install integrations</a></li>
+            <li class="flex gap-3"><span class="flex-shrink-0 w-6 h-6 rounded-full bg-primary text-white text-xs flex items-center justify-center font-medium">4</span> <a href="#chrome" class="underline">Install the Chrome extension</a></li>
+            <li class="flex gap-3"><span class="flex-shrink-0 w-6 h-6 rounded-full bg-primary text-white text-xs flex items-center justify-center font-medium">5</span> <a href="#ios" class="underline">Install the iOS app</a></li>
+            <li class="flex gap-3"><span class="flex-shrink-0 w-6 h-6 rounded-full bg-primary text-white text-xs flex items-center justify-center font-medium">6</span> <a href="#conversations-web" class="underline">Perform your memory evaluations</a></li>
+            <li class="flex gap-3"><span class="flex-shrink-0 w-6 h-6 rounded-full bg-primary text-white text-xs flex items-center justify-center font-medium">7</span> <a href="#survey" class="underline">Complete the post evaluation survey</a></li>
+          </ol>
+        </div>
+      </div>
+    </section>
+
+    <!-- Section 1: Sign Up & Integrate -->
+    <section id="signup" class="px-6 sm:px-12 lg:px-20 py-16 border-b border-border-light">
+      <div class="max-w-3xl">
+        <div class="flex items-center gap-3 mb-2">
+          <span class="flex-shrink-0 w-8 h-8 rounded-lg bg-primary text-white text-sm flex items-center justify-center font-bold">1</span>
+          <p class="text-sm font-medium text-text-body-light uppercase tracking-wider">Getting Started</p>
+        </div>
+        <h2 class="text-3xl font-bold text-text-heading tracking-tight mb-3">Sign Up & Integrate</h2>
+        <p class="text-text-body leading-relaxed mb-10">In order for us to help you recall your memories, you need to create your account and connect relevant sources and applications.</p>
+
+        <!-- Step 1.1 -->
+        <div class="step-card bg-white border border-border-light rounded-2xl p-6 mb-6">
+          <h3 class="text-lg font-semibold text-text-heading mb-1">Create your account</h3>
+          <div class="space-y-5 mt-4">
+            <div>
+              <p class="text-sm text-text-body"><strong>1.1.</strong> Go to <a href="https://app.engramme.com/" target="_blank" class="text-primary underline font-medium">app.engramme.com</a></p>
+              <img src="images/image15.png" alt="Engramme login page" class="section-img mt-3 w-full max-w-md">
+            </div>
+            <div>
+              <p class="text-sm text-text-body"><strong>1.2.</strong> Create an account by logging in with Google.</p>
+            </div>
+            <div>
+              <p class="text-sm text-text-body"><strong>1.3.</strong> Select your preferred Google account and sign in with your email and password.</p>
+            </div>
+            <div>
+              <p class="text-sm text-text-body"><strong>1.4.</strong> Press continue after you reach this screen.</p>
+            </div>
+            <div>
+              <p class="text-sm text-text-body"><strong>1.5.</strong> You should be redirected to the homepage that greets you with your name.</p>
+              <img src="images/image98.png" alt="Engramme homepage" class="section-img mt-3 w-full max-w-md">
+            </div>
+          </div>
+        </div>
+
+        <!-- Step 2: Add Integrations -->
+        <div class="step-card bg-white border border-border-light rounded-2xl p-6 mb-6">
+          <h3 class="text-lg font-semibold text-text-heading mb-1">Add your integrations</h3>
+          <div class="space-y-5 mt-4">
+            <div>
+              <p class="text-sm text-text-body"><strong>2.1.</strong> Click on the Plus sign to add integrations.</p>
+            </div>
+            <div>
+              <p class="text-sm text-text-body"><strong>2.2.</strong> Select the integrations you want to form part of your memories. More integrations lead to better memory quality.</p>
+              <img src="images/image53.png" alt="Integration selection" class="section-img mt-3 w-full max-w-md">
+            </div>
+            <div>
+              <p class="text-sm text-text-body"><strong>2.3.</strong> Choose your primary email address; this is the source from which your memories will be drawn.</p>
+              <img src="images/image51.png" alt="Email selection" class="section-img mt-3 w-full max-w-md">
+            </div>
+            <div>
+              <p class="text-sm text-text-body"><strong>2.4.</strong> Once you select an account, you will be shown a disclaimer. Click <strong>Advanced</strong> and then <strong>"Go to memorymachines-integrations..."</strong></p>
+              <img src="images/image63.png" alt="Advanced settings" class="section-img mt-3 w-full max-w-sm">
+            </div>
+            <div>
+              <p class="text-sm text-text-body"><strong>2.5.</strong> Click continue below and you should get a successful integration message at the top of your screen.</p>
+              <img src="images/image65.png" alt="Successful integration" class="section-img mt-3 w-full max-w-md">
+            </div>
+            <div>
+              <p class="text-sm text-text-body"><strong>2.6.</strong> Repeat this process for all the integrations that you would like to include. The more integrations, the better the quality of memories.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Section 2: Chrome Extension -->
+    <section id="chrome" class="px-6 sm:px-12 lg:px-20 py-16 bg-bg-cream border-b border-border-light">
+      <div class="max-w-3xl">
+        <div class="flex items-center gap-3 mb-2">
+          <span class="flex-shrink-0 w-8 h-8 rounded-lg bg-primary text-white text-sm flex items-center justify-center font-bold">2</span>
+          <p class="text-sm font-medium text-text-body-light uppercase tracking-wider">Installation</p>
+        </div>
+        <h2 class="text-3xl font-bold text-text-heading tracking-tight mb-3">Chrome Extension</h2>
+        <p class="text-text-body leading-relaxed mb-10">Engramme Assistant is a Chrome/Gmail extension designed to help you organize and recall information directly from any website. Once installed and logged in, the extension automatically displays memory cards in a side panel while you surf the web.</p>
+
+        <!-- Download -->
+        <div class="step-card bg-white border border-border-light rounded-2xl p-6 mb-6">
+          <h3 class="text-lg font-semibold text-text-heading mb-4">1. Download the Extension</h3>
+          <div class="space-y-3">
+            <p class="text-sm text-text-body"><strong>1.1.</strong> Download the extension files called <code class="bg-bg-subtle px-2 py-0.5 rounded text-sm">engramme_extension.zip</code> from the shared folder.</p>
+            <p class="text-sm text-text-body"><strong>1.2.</strong> Unzip the file by double clicking; you should now see a folder titled <code class="bg-bg-subtle px-2 py-0.5 rounded text-sm">engramme_extension</code>.</p>
+            <div class="bg-accent-gold/10 border border-accent-gold/30 rounded-xl p-4 mt-3">
+              <p class="text-sm text-text-body"><strong>To update:</strong> If you already downloaded the extension files, please <strong>DELETE THE EXISTING FOLDER</strong> in your local drive. Then, re-download the extension files from the shared folder.</p>
+            </div>
+          </div>
+        </div>
+
+        <!-- Open Extensions -->
+        <div class="step-card bg-white border border-border-light rounded-2xl p-6 mb-6">
+          <h3 class="text-lg font-semibold text-text-heading mb-4">2. Open Chrome Extensions</h3>
+          <div class="space-y-3">
+            <p class="text-sm text-text-body"><strong>2.1.</strong> Open your Google Chrome browser.</p>
+            <p class="text-sm text-text-body"><strong>2.2.</strong> Type <code class="bg-bg-subtle px-2 py-0.5 rounded text-sm">chrome://extensions/</code> into the address bar and hit Enter.</p>
+            <img src="images/image74.png" alt="Chrome extensions page" class="section-img mt-3 w-full max-w-lg">
+          </div>
+        </div>
+
+        <!-- Developer Mode -->
+        <div class="step-card bg-white border border-border-light rounded-2xl p-6 mb-6">
+          <h3 class="text-lg font-semibold text-text-heading mb-4">3. Enable Developer Mode</h3>
+          <p class="text-sm text-text-body"><strong>3.1.</strong> Look for the <strong>Developer mode</strong> switch, which is usually in the upper right corner, and click it to turn it ON.</p>
+          <img src="images/image81.png" alt="Enable developer mode" class="section-img mt-3 w-full max-w-lg">
+        </div>
+
+        <!-- Load Extension -->
+        <div class="step-card bg-white border border-border-light rounded-2xl p-6 mb-6">
+          <h3 class="text-lg font-semibold text-text-heading mb-4">4. Load the Extension</h3>
+          <div class="space-y-4">
+            <div>
+              <p class="text-sm text-text-body"><strong>4.1.</strong> Click on the <strong>Load unpacked</strong> button, which is in the upper left corner.</p>
+              <img src="images/image58.png" alt="Load unpacked button" class="section-img mt-3 w-full max-w-xs">
+            </div>
+            <div>
+              <p class="text-sm text-text-body"><strong>4.2.</strong> A file selection window will appear. Navigate to and select the folder named <code class="bg-bg-subtle px-2 py-0.5 rounded text-sm">engramme_extension</code> that you downloaded.</p>
+              <img src="images/image31.png" alt="Select folder" class="section-img mt-3 w-full max-w-md">
+            </div>
+            <p class="text-sm text-text-body"><strong>4.3.</strong> If you installed a previous version, select the new version when you click Load Unpacked.</p>
+            <div>
+              <p class="text-sm text-text-body"><strong>4.4.</strong> You can find the extension successfully uploaded here.</p>
+              <img src="images/image77.png" alt="Extension uploaded" class="section-img mt-3 w-full max-w-lg">
+            </div>
+          </div>
+        </div>
+
+        <!-- Log In -->
+        <div class="step-card bg-white border border-border-light rounded-2xl p-6 mb-6">
+          <h3 class="text-lg font-semibold text-text-heading mb-4">5. Log in with your account</h3>
+          <div class="space-y-4">
+            <div>
+              <p class="text-sm text-text-body"><strong>5.1.</strong> Once you've unpacked the extension, click on the <strong>puzzle piece</strong> in the top right, then select <strong>Engramme Assistant</strong>.</p>
+              <img src="images/image83.png" alt="Select extension" class="section-img mt-3 w-full max-w-xs">
+            </div>
+            <div>
+              <p class="text-sm text-text-body"><strong>5.2.</strong> Click <strong>Sign in with Google</strong> and log in with the same account that you signed up with.</p>
+              <img src="images/image76.png" alt="Sign in with Google" class="section-img mt-3 w-full max-w-xs">
+            </div>
+            <div>
+              <p class="text-sm text-text-body"><strong>5.3.</strong> Once all your integrations go through (which can take up to 24 hours), you will be able to view all your memories.</p>
+              <img src="images/image10.png" alt="Memories view" class="section-img mt-3 w-full max-w-md">
+            </div>
+          </div>
+        </div>
+
+        <!-- Troubleshooting -->
+        <div class="step-card bg-white border border-border-light rounded-2xl p-6">
+          <h3 class="text-lg font-semibold text-text-heading mb-4">6. Troubleshooting</h3>
+          <div class="space-y-4">
+            <div class="bg-bg-subtle rounded-xl p-4">
+              <p class="text-sm text-text-body"><strong>Unable to log in with Google:</strong> Go to <code class="bg-white px-2 py-0.5 rounded text-sm">chrome://extensions</code> and ensure that the ID matches the ID field in the screenshot below exactly. If it doesn't, ensure that the version is at least 4.1.0.</p>
+              <img src="images/image80.png" alt="Extension ID" class="section-img mt-3 w-full max-w-md">
+            </div>
+            <div class="bg-bg-subtle rounded-xl p-4">
+              <p class="text-sm text-text-body"><strong>Repeated errors when logging in:</strong> After loading the chrome extension, every single tab that uses it needs to be refreshed as the extension's functionality won't be reflected until the tab is refreshed.</p>
+            </div>
+            <div class="bg-bg-subtle rounded-xl p-4">
+              <p class="text-sm text-text-body"><strong>Google sign in blocking you:</strong> Try using another account for signing in or just contact Guha Mahesh.</p>
+            </div>
+            <div class="bg-bg-subtle rounded-xl p-4">
+              <p class="text-sm text-text-body"><strong>If everything fails:</strong> Contact Guha Mahesh.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Section 3: iOS App -->
+    <section id="ios" class="px-6 sm:px-12 lg:px-20 py-16 border-b border-border-light">
+      <div class="max-w-3xl">
+        <div class="flex items-center gap-3 mb-2">
+          <span class="flex-shrink-0 w-8 h-8 rounded-lg bg-primary text-white text-sm flex items-center justify-center font-bold">3</span>
+          <p class="text-sm font-medium text-text-body-light uppercase tracking-wider">Installation</p>
+        </div>
+        <h2 class="text-3xl font-bold text-text-heading tracking-tight mb-3">iOS App</h2>
+        <p class="text-text-body leading-relaxed mb-10">The Engramme iOS app is an iPhone app designed to help you retrieve memories during conversations.</p>
+
+        <!-- Find iCloud Email -->
+        <div class="step-card bg-white border border-border-light rounded-2xl p-6 mb-6">
+          <h3 class="text-lg font-semibold text-text-heading mb-4">1. Find your iCloud email</h3>
+          <div class="space-y-5">
+            <div>
+              <p class="text-sm text-text-body"><strong>1.1.</strong> Go to your Settings app on your phone.</p>
+              <div class="flex gap-4 mt-3">
+                <img src="images/image89.png" alt="Settings app" class="phone-img w-full max-w-[140px]">
+                <img src="images/image85.png" alt="Settings screen" class="phone-img w-full max-w-[140px]">
+              </div>
+            </div>
+            <div>
+              <p class="text-sm text-text-body"><strong>1.2.</strong> Then, click on your name at the top.</p>
+              <img src="images/image97.png" alt="Click your profile" class="phone-img mt-3">
+            </div>
+            <div>
+              <p class="text-sm text-text-body"><strong>1.3.</strong> Once you click on your name, you can see your iCloud email right under your name. Take note of this email for the next steps.</p>
+              <img src="images/image64.png" alt="iCloud email" class="phone-img mt-3">
+            </div>
+          </div>
+        </div>
+
+        <!-- TestFlight -->
+        <div class="step-card bg-white border border-border-light rounded-2xl p-6 mb-6">
+          <h3 class="text-lg font-semibold text-text-heading mb-4">2. Get approved to download via TestFlight</h3>
+          <div class="space-y-3">
+            <p class="text-sm text-text-body"><strong>2.1.</strong> TestFlight is the way we let you try out apps before we officially publish on the AppStore. <strong>Email Guha Mahesh</strong> the iCloud email you collected in step 1.</p>
+            <p class="text-sm text-text-body"><strong>2.2.</strong> You will receive an email invitation to our TestFlight organization. Check your junk folder if you don't see it.</p>
+            <p class="text-sm text-text-body"><strong>2.3.</strong> Once you have accepted this invite, email Guha Mahesh and we will invite you to use the Engramme app.</p>
+            <p class="text-sm text-text-body"><strong>2.4.</strong> Go to the App Store and download <strong>TestFlight</strong>. Log in with the same iCloud email you found in step 1.</p>
+            <p class="text-sm text-text-body"><strong>2.5.</strong> Click the TestFlight invitation and install the app from there.</p>
+          </div>
+        </div>
+
+        <!-- Log in -->
+        <div class="step-card bg-white border border-border-light rounded-2xl p-6 mb-6">
+          <h3 class="text-lg font-semibold text-text-heading mb-4">3. Log in with Google</h3>
+          <div class="space-y-4">
+            <div>
+              <p class="text-sm text-text-body"><strong>3.1.</strong> Sign in with the same Google account you created an account with in app.engramme.com.</p>
+              <img src="images/image54.png" alt="iOS login" class="phone-img mt-3">
+            </div>
+            <div>
+              <p class="text-sm text-text-body"><strong>3.2.</strong> Click on the plus and ensure all your integrations carried over. Connected integrations should have a green box around them and say <strong>Connected</strong> underneath.</p>
+              <div class="flex gap-4 mt-3">
+                <img src="images/image72.png" alt="Integrations" class="phone-img w-full max-w-[200px]">
+                <img src="images/image87.png" alt="Connected integrations" class="phone-img w-full max-w-[200px]">
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Troubleshooting -->
+        <div class="step-card bg-white border border-border-light rounded-2xl p-6">
+          <h3 class="text-lg font-semibold text-text-heading mb-4">4. Troubleshooting</h3>
+          <div class="space-y-4">
+            <div class="bg-bg-subtle rounded-xl p-4">
+              <p class="text-sm text-text-body"><strong>Taking too long to get invited:</strong> Feel free to contact Guha Mahesh to get this done.</p>
+            </div>
+            <div class="bg-bg-subtle rounded-xl p-4">
+              <p class="text-sm text-text-body"><strong>Didn't get an email:</strong> Check your spam and ensure you're on the same iCloud account that you emailed Guha Mahesh with.</p>
+            </div>
+            <div class="bg-bg-subtle rounded-xl p-4">
+              <p class="text-sm text-text-body"><strong>Can't find an iCloud account:</strong> You may need to create one at <a href="https://www.icloud.com/" target="_blank" class="underline">icloud.com</a>.</p>
+            </div>
+            <div class="bg-bg-subtle rounded-xl p-4">
+              <p class="text-sm text-text-body"><strong>If everything fails:</strong> Contact Guha Mahesh.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Section 4: Using and Evaluating Memories -->
+    <section id="using" class="px-6 sm:px-12 lg:px-20 py-16 bg-bg-cream border-b border-border-light">
+      <div class="max-w-3xl">
+        <h2 class="text-3xl font-bold text-text-heading tracking-tight mb-3">Using & Evaluating Memories</h2>
+        <p class="text-text-body leading-relaxed mb-4">There are multiple ways you can use the Engramme Assistant:</p>
+        <div class="flex flex-wrap gap-2 mb-10">
+          <a href="#conversations-web" class="bg-white border border-border-light rounded-xl px-4 py-2 text-sm font-medium text-text-body hover:border-primary transition-colors">Conversations (Web)</a>
+          <a href="#conversations-ios" class="bg-white border border-border-light rounded-xl px-4 py-2 text-sm font-medium text-text-body hover:border-primary transition-colors">Conversations (iOS)</a>
+          <a href="#web-browsing" class="bg-white border border-border-light rounded-xl px-4 py-2 text-sm font-medium text-text-body hover:border-primary transition-colors">Web Browsing</a>
+          <a href="#gmail" class="bg-white border border-border-light rounded-xl px-4 py-2 text-sm font-medium text-text-body hover:border-primary transition-colors">Gmail</a>
+          <a href="#ask-mode" class="bg-white border border-border-light rounded-xl px-4 py-2 text-sm font-medium text-text-body hover:border-primary transition-colors">Ask Mode</a>
+        </div>
+      </div>
+    </section>
+
+    <!-- Conversations - Web -->
+    <section id="conversations-web" class="px-6 sm:px-12 lg:px-20 py-16 border-b border-border-light">
+      <div class="max-w-3xl">
+        <p class="text-sm font-medium text-text-body-light uppercase tracking-wider mb-2">Using Engramme</p>
+        <h2 class="text-3xl font-bold text-text-heading tracking-tight mb-3">Real-world Conversations (Web App)</h2>
+        <p class="text-text-body leading-relaxed mb-4">During a conversation with friends, family or colleagues, you can use the Engramme Assistant to provide you with memories in real time.</p>
+        <div class="bg-accent-gold/10 border border-accent-gold/30 rounded-xl p-4 mb-10">
+          <p class="text-sm text-text-body"><strong>Important:</strong> Before starting to use the app during conversation, be sure to seek consent from all parties.</p>
+        </div>
+        <p class="text-text-body leading-relaxed mb-10">As you talk, memories will surface automatically every ~30 seconds. These memories are related to what the conversation is about.</p>
+
+        <div class="step-card bg-white border border-border-light rounded-2xl p-6 mb-6">
+          <h3 class="text-lg font-semibold text-text-heading mb-4">How to Start Recording</h3>
+          <div class="space-y-5">
+            <div>
+              <p class="text-sm text-text-body">When you open <a href="https://app.engramme.com" target="_blank" class="underline font-medium">app.engramme.com</a>, you'll be greeted with the following screen.</p>
+              <img src="images/image62.png" alt="Homepage" class="section-img mt-3 w-full max-w-lg">
+            </div>
+            <div>
+              <p class="text-sm text-text-body">To begin recording, click on the <strong>Recording</strong> button.</p>
+              <img src="images/image42.png" alt="Recording button" class="section-img mt-3 w-full max-w-xs">
+            </div>
+            <div>
+              <p class="text-sm text-text-body">It will request you to allow access to your microphone. Select <strong>Allow while visiting this site</strong>.</p>
+              <img src="images/image90.png" alt="Microphone permission" class="section-img mt-3 w-full max-w-md">
+            </div>
+            <div>
+              <p class="text-sm text-text-body">The Recording button should turn <strong class="text-red-500">pink</strong> to indicate that it is recording.</p>
+              <img src="images/image44.png" alt="Recording active" class="section-img mt-3 w-full max-w-xs">
+            </div>
+            <p class="text-sm text-text-body">As you speak, memory cards will appear. It may take about 20-30 seconds for memories to show up.</p>
+          </div>
+        </div>
+
+        <!-- Memory Card Anatomy -->
+        <div id="memory-card" class="step-card bg-white border border-border-light rounded-2xl p-6 mb-6">
+          <h3 class="text-lg font-semibold text-text-heading mb-4">What's inside a Memory Card?</h3>
+          <img src="images/image75.png" alt="Memory card anatomy" class="section-img mb-6 w-full max-w-lg">
+          <div class="overflow-x-auto">
+            <table class="w-full text-sm">
+              <thead>
+                <tr class="bg-bg-subtle">
+                  <th class="text-left p-3 rounded-tl-lg font-semibold text-text-heading">#</th>
+                  <th class="text-left p-3 rounded-tr-lg font-semibold text-text-heading">Description</th>
+                </tr>
+              </thead>
+              <tbody class="divide-y divide-border-light">
+                <tr><td class="p-3 font-medium">1</td><td class="p-3"><strong>Thumbs up</strong> — The memory was relevant and accurate.</td></tr>
+                <tr><td class="p-3 font-medium">2</td><td class="p-3"><strong>Thumbs down</strong> — The memory was irrelevant or inaccurate.</td></tr>
+                <tr><td class="p-3 font-medium">3</td><td class="p-3"><strong>Comment</strong> — Type what you liked or disliked in more detail, then click save.</td></tr>
+                <tr><td class="p-3 font-medium">4</td><td class="p-3"><strong>Copy</strong> — Copy the memory to your clipboard.</td></tr>
+                <tr><td class="p-3 font-medium">5</td><td class="p-3"><strong>Participants</strong> — People or organizations involved in this memory.</td></tr>
+                <tr><td class="p-3 font-medium">6</td><td class="p-3"><strong>Date of the memory</strong> — When the memory took place.</td></tr>
+                <tr><td class="p-3 font-medium">7</td><td class="p-3"><strong>Source of the memory</strong> — Where the information was taken from.</td></tr>
+              </tbody>
+            </table>
+          </div>
+          <div class="bg-bg-subtle rounded-xl p-4 mt-4">
+            <p class="text-sm text-text-body-light"><em>An unsaved comment will be submitted when you click any of the thumb buttons, but feel free to click the comment button again to edit and resubmit.</em></p>
+          </div>
+        </div>
+
+        <!-- History Tab -->
+        <div class="step-card bg-white border border-border-light rounded-2xl p-6">
+          <h3 class="text-lg font-semibold text-text-heading mb-4">History Tab</h3>
+          <p class="text-sm text-text-body mb-4">We recognize that being engaged in a conversation and providing accurate feedback is difficult. For that reason, we have the History tab.</p>
+          <div class="space-y-4">
+            <div>
+              <p class="text-sm text-text-body">Click on the <strong>History</strong> tab in the Navigation Bar at the top and you will then see memories from this session.</p>
+              <img src="images/image47.png" alt="History tab" class="section-img mt-3 w-full max-w-lg">
+            </div>
+            <div>
+              <p class="text-sm text-text-body">Feedback for any given memory must be tied to context. You can see the query that triggered each memory below the card <em>("I'm recalling memories with this query")</em>. Compare the query to your memory and check relevance and accuracy.</p>
+              <img src="images/image55.png" alt="Memory context" class="section-img mt-3 w-full max-w-lg">
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Conversations - iOS -->
+    <section id="conversations-ios" class="px-6 sm:px-12 lg:px-20 py-16 bg-bg-cream border-b border-border-light">
+      <div class="max-w-3xl">
+        <p class="text-sm font-medium text-text-body-light uppercase tracking-wider mb-2">Using Engramme</p>
+        <h2 class="text-3xl font-bold text-text-heading tracking-tight mb-3">Real-world Conversations (iPhone)</h2>
+        <p class="text-text-body leading-relaxed mb-4">During a conversation with friends, family or colleagues, you can use the iOS app to provide you with memories in real time.</p>
+        <div class="bg-accent-gold/10 border border-accent-gold/30 rounded-xl p-4 mb-10">
+          <p class="text-sm text-text-body"><strong>Important:</strong> Before starting to use the app during conversation, be sure to seek consent from all parties.</p>
+        </div>
+
+        <div class="step-card bg-white border border-border-light rounded-2xl p-6 mb-6">
+          <div class="space-y-5">
+            <div>
+              <p class="text-sm text-text-body">When you open the app, you'll be greeted with the following screen:</p>
+              <img src="images/image6.png" alt="iOS app home" class="phone-img mt-3">
+            </div>
+            <div>
+              <p class="text-sm text-text-body">To begin recording your conversation and see memories surface, click on the <strong>microphone</strong> in the bottom-left. This will start recording and surface memories every 30 seconds (you can change this interval in settings).</p>
+              <img src="images/image2.png" alt="iOS microphone" class="phone-img mt-3">
+            </div>
+            <div class="bg-bg-subtle rounded-xl p-4">
+              <p class="text-sm text-text-body"><strong>Troubleshooting:</strong> If you're running into problems, go to <strong>Settings > Engramme > Microphone</strong> — access must be <strong>ON</strong>.</p>
+            </div>
+          </div>
+        </div>
+
+        <!-- Same memory card reference -->
+        <div class="step-card bg-white border border-border-light rounded-2xl p-6">
+          <p class="text-sm text-text-body">The memory cards on iOS work the same way as on the web. See the <a href="#memory-card" class="underline font-medium">Memory Card Guide</a> above for details on how to evaluate each card.</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- Web Browsing -->
+    <section id="web-browsing" class="px-6 sm:px-12 lg:px-20 py-16 border-b border-border-light">
+      <div class="max-w-3xl">
+        <p class="text-sm font-medium text-text-body-light uppercase tracking-wider mb-2">Using Engramme</p>
+        <h2 class="text-3xl font-bold text-text-heading tracking-tight mb-3">Web Browsing</h2>
+
+        <div class="step-card bg-white border border-border-light rounded-2xl p-6 mb-6">
+          <div class="space-y-5">
+            <div>
+              <p class="text-sm text-text-body">On your Chrome browser, open any website. On the right side, you should see the Engramme Assistant bar with a memory card showing (it may take a few seconds).</p>
+              <img src="images/image16.jpg" alt="Web browsing memories" class="section-img mt-3 w-full max-w-lg">
+            </div>
+            <div>
+              <p class="text-sm text-text-body"><strong>Evaluate the memory card:</strong> Carefully read the descriptive text associated with each memory card to fully understand the context.</p>
+              <ul class="list-disc list-inside text-sm text-text-body mt-2 space-y-1 ml-2">
+                <li>To indicate <strong>acceptance</strong> (correct and relevant), select the <strong>thumbs up</strong> icon.</li>
+                <li>To indicate <strong>rejection</strong> (incorrect, irrelevant, or both), select the <strong>thumbs down</strong> icon.</li>
+                <li>Use the <strong>comments bubble</strong> to add more details.</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Gmail -->
+    <section id="gmail" class="px-6 sm:px-12 lg:px-20 py-16 bg-bg-cream border-b border-border-light">
+      <div class="max-w-3xl">
+        <p class="text-sm font-medium text-text-body-light uppercase tracking-wider mb-2">Using Engramme</p>
+        <h2 class="text-3xl font-bold text-text-heading tracking-tight mb-3">Gmail</h2>
+
+        <div class="step-card bg-white border border-border-light rounded-2xl p-6 mb-6">
+          <div class="space-y-5">
+            <div>
+              <p class="text-sm text-text-body">On your Chrome browser, open Gmail. On the right side, you should see the Engramme Assistant bar.</p>
+              <img src="images/image52.png" alt="Gmail integration" class="section-img mt-3 w-full max-w-lg">
+            </div>
+            <div>
+              <p class="text-sm text-text-body">Open any email thread in your inbox. The Engramme Assistant will show relevant memories.</p>
+              <img src="images/image13.png" alt="Gmail memories" class="section-img mt-3 w-full max-w-lg">
+            </div>
+            <div>
+              <p class="text-sm text-text-body"><strong>Evaluate the memory card:</strong> Carefully read the content and assess quality and relevance.</p>
+              <ul class="list-disc list-inside text-sm text-text-body mt-2 space-y-1 ml-2">
+                <li>To indicate <strong>acceptance</strong> (correct and relevant), select the <strong>thumbs up</strong> icon.</li>
+                <li>To indicate <strong>rejection</strong> (incorrect, irrelevant, or both), select the <strong>thumbs down</strong> icon.</li>
+                <li>Use the <strong>comments bubble</strong> to add more details.</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Ask Mode -->
+    <section id="ask-mode" class="px-6 sm:px-12 lg:px-20 py-16 border-b border-border-light">
+      <div class="max-w-3xl">
+        <p class="text-sm font-medium text-text-body-light uppercase tracking-wider mb-2">Using Engramme</p>
+        <h2 class="text-3xl font-bold text-text-heading tracking-tight mb-3">Ask Mode</h2>
+        <p class="text-text-body leading-relaxed mb-10">Across the Chrome extension, iOS, and web app, you have the option to switch from memory card retrieval to asking questions.</p>
+
+        <div class="grid gap-6 md:grid-cols-2 lg:grid-cols-1 xl:grid-cols-2">
+          <div class="step-card bg-white border border-border-light rounded-2xl p-6">
+            <h3 class="text-base font-semibold text-text-heading mb-3">In the Web App</h3>
+            <p class="text-sm text-text-body mb-3">Click on the <strong>Ask</strong> button in the top right. This switches your input from fetching memories to a prompt.</p>
+            <img src="images/image11.png" alt="Web app ask mode" class="section-img w-full">
+          </div>
+
+          <div class="step-card bg-white border border-border-light rounded-2xl p-6">
+            <h3 class="text-base font-semibold text-text-heading mb-3">In the iOS App</h3>
+            <p class="text-sm text-text-body mb-3">Click on the settings button in the top right and ensure <strong>"Ask"</strong> is selected under "Default Input Mode". Then type your questions.</p>
+            <img src="images/image56.png" alt="iOS ask mode" class="phone-img mx-auto">
+          </div>
+
+          <div class="step-card bg-white border border-border-light rounded-2xl p-6 md:col-span-2 lg:col-span-1 xl:col-span-2">
+            <h3 class="text-base font-semibold text-text-heading mb-3">In the Chrome Extension</h3>
+            <p class="text-sm text-text-body mb-3">Click on the <strong>chat button</strong> in the bottom right of the extension overlay.</p>
+            <img src="images/image12.png" alt="Extension ask mode" class="section-img w-full max-w-md">
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Post Evaluation Survey -->
+    <section id="survey" class="px-6 sm:px-12 lg:px-20 py-16">
+      <div class="max-w-3xl">
+        <p class="text-sm font-medium text-text-body-light uppercase tracking-wider mb-2">Finish Up</p>
+        <h2 class="text-3xl font-bold text-text-heading tracking-tight mb-3">Post Evaluation Survey</h2>
+        <p class="text-text-body leading-relaxed mb-8">After completing your evaluations, please fill out the post evaluation survey.</p>
+
+        <a href="https://docs.google.com/forms/d/17BRPQ4gTJf6MrIAzy26Ija1zT8Tf2e_-SG1A9dwjMn4/edit" target="_blank" class="inline-flex items-center gap-2 bg-primary text-white px-6 py-3 rounded-xl text-sm font-medium hover:opacity-90 transition-opacity mb-10">
+          Open Survey
+          <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14"/></svg>
+        </a>
+
+        <div class="bg-bg-subtle rounded-2xl p-6">
+          <p class="text-sm font-semibold text-text-heading mb-3">Survey questions include:</p>
+          <ul class="space-y-2 text-sm text-text-body">
+            <li class="flex gap-2"><span class="text-text-body-light">1.</span> What was your overall impression while using the Engramme Assistant?</li>
+            <li class="flex gap-2"><span class="text-text-body-light">2.</span> What are the main things that you would like to see improvements on?</li>
+            <li class="flex gap-2"><span class="text-text-body-light">3.</span> What were the main challenges?</li>
+            <li class="flex gap-2"><span class="text-text-body-light">4.</span> Please comment on the installation experience.</li>
+            <li class="flex gap-2"><span class="text-text-body-light">5.</span> Please comment on the overall design and user experience.</li>
+            <li class="flex gap-2"><span class="text-text-body-light">6.</span> How would you imagine using the Engramme Assistant in your daily life?</li>
+            <li class="flex gap-2"><span class="text-text-body-light">7.</span> What would be the main features that you would like to see added?</li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="px-6 sm:px-12 lg:px-20 py-8 border-t border-border-light bg-bg-cream">
+      <div class="max-w-3xl flex items-center justify-between">
+        <p class="text-sm text-text-body-light">Engramme &mdash; Omniscient AI to augment human cognition</p>
+        <p class="text-xs text-text-body-light">Version 1/2/2026</p>
+      </div>
+    </footer>
+
+  </main>
+
+  <!-- Active nav highlighting -->
+  <script>
+    const sections = document.querySelectorAll('section[id]');
+    const navLinks = document.querySelectorAll('.nav-link');
+
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          navLinks.forEach(link => link.classList.remove('active', 'font-medium', 'text-text-heading'));
+          const activeLink = document.querySelector(`.nav-link[href="#${entry.target.id}"]`);
+          if (activeLink) {
+            activeLink.classList.add('active', 'font-medium', 'text-text-heading');
+          }
+        }
+      });
+    }, { rootMargin: '-20% 0px -80% 0px' });
+
+    sections.forEach(section => observer.observe(section));
+  </script>
+
+</body>
+</html>
