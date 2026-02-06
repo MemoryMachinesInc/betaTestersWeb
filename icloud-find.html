@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Find Your iCloud Email — Engramme</title>
+  <link rel="icon" type="image/png" href="favicon.png">
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,100..1000;1,9..40,100..1000&display=swap" rel="stylesheet">
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            'text-heading': '#151211',
+            'text-body': '#2c2827',
+            'text-body-light': '#787270',
+            'bg-cream': '#faf9f5',
+            'bg-subtle': '#f4f3f3',
+            'border-light': '#e9e8e7',
+            'border-medium': '#8f8a88',
+            'accent-gold': '#e8a41a',
+            'primary': '#262626',
+          },
+          fontFamily: {
+            sans: ['DM Sans', 'system-ui', '-apple-system', 'sans-serif'],
+          },
+        }
+      }
+    }
+  </script>
+  <style>
+    html { scroll-behavior: smooth; }
+    body { font-family: 'DM Sans', system-ui, -apple-system, sans-serif; color: #2c2827; }
+    .section-img { border-radius: 1rem; border: 1px solid #e9e8e7; cursor: zoom-in; transition: transform 0.2s, box-shadow 0.2s; }
+    .section-img:hover { transform: scale(1.02); box-shadow: 0 8px 24px rgba(0,0,0,0.12); }
+    .phone-img { max-width: 280px; border-radius: 2rem; border: 1px solid #e9e8e7; cursor: zoom-in; transition: transform 0.2s, box-shadow 0.2s; }
+    .phone-img:hover { transform: scale(1.02); box-shadow: 0 8px 24px rgba(0,0,0,0.12); }
+    .lightbox { display: none; position: fixed; inset: 0; background: rgba(0,0,0,0.7); z-index: 100; justify-content: center; align-items: center; cursor: zoom-out; backdrop-filter: blur(4px); }
+    .lightbox.active { display: flex; }
+    .lightbox img { max-width: 90vw; max-height: 90vh; border-radius: 1rem; box-shadow: 0 24px 58px rgba(0,0,0,0.25); }
+  </style>
+</head>
+<body class="bg-white">
+
+  <!-- Top Bar -->
+  <header class="bg-white border-b border-border-light">
+    <div class="max-w-3xl mx-auto px-6 py-4 flex items-center justify-between">
+      <a href="index.html" class="flex items-center gap-3 hover:opacity-80 transition-opacity">
+        <svg class="w-5 h-5 text-text-body-light" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7"/></svg>
+        <span class="text-2xl font-bold text-text-heading tracking-tight">Engramme</span>
+      </a>
+    </div>
+  </header>
+
+  <main class="max-w-3xl mx-auto px-6 py-12 lg:py-16">
+    <h1 class="text-3xl font-bold text-text-heading tracking-tight mb-3">How to Find Your iCloud Email</h1>
+    <p class="text-text-body leading-relaxed mb-10">You need your iCloud email to receive your TestFlight invitation. Here's how to find it on your iPhone.</p>
+
+    <div class="bg-white border border-border-light rounded-2xl p-6 space-y-6">
+
+      <div>
+        <p class="text-sm text-text-body"><strong>1.</strong> Open the <strong>Settings</strong> app on your iPhone.</p>
+        <div class="flex gap-4 mt-3">
+          <img src="images/image89.png" alt="Settings app icon" class="phone-img w-full max-w-[140px]">
+          <img src="images/image85.png" alt="Settings screen" class="phone-img w-full max-w-[140px]">
+        </div>
+      </div>
+
+      <div>
+        <p class="text-sm text-text-body"><strong>2.</strong> Tap on <strong>your name</strong> at the top of the Settings screen.</p>
+        <img src="images/image97.png" alt="Tap your profile" class="phone-img mt-3">
+      </div>
+
+      <div>
+        <p class="text-sm text-text-body"><strong>3.</strong> Your iCloud email is displayed right under your name. This is the email you need to provide in the eligibility form.</p>
+        <img src="images/image64.png" alt="iCloud email location" class="phone-img mt-3">
+      </div>
+
+      <div class="bg-bg-subtle rounded-xl p-4">
+        <p class="text-sm text-text-body"><strong>Don't have an iCloud account?</strong> You may need to create one at <a href="https://www.icloud.com/" target="_blank" class="underline">icloud.com</a>.</p>
+      </div>
+
+    </div>
+
+    <div class="mt-8">
+      <a href="index.html#ios" class="inline-flex items-center gap-2 text-sm font-medium text-text-body-light hover:text-text-heading transition-colors">
+        <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7"/></svg>
+        Back to installation guide
+      </a>
+    </div>
+  </main>
+
+  <!-- Lightbox -->
+  <div class="lightbox" id="lightbox" onclick="this.classList.remove('active')">
+    <img id="lightbox-img" src="" alt="">
+  </div>
+  <script>
+    document.querySelectorAll('.section-img, .phone-img').forEach(img => {
+      img.addEventListener('click', () => {
+        document.getElementById('lightbox-img').src = img.src;
+        document.getElementById('lightbox').classList.add('active');
+      });
+    });
+    document.addEventListener('keydown', (e) => {
+      if (e.key === 'Escape') document.getElementById('lightbox').classList.remove('active');
+    });
+  </script>
+
+</body>
+</html>
