@@ -1,0 +1,229 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Research Consent Form — Engramme</title>
+  <link rel="icon" type="image/png" href="favicon.png">
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,100..1000;1,9..40,100..1000&display=swap" rel="stylesheet">
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            'text-heading': '#151211',
+            'text-body': '#2c2827',
+            'text-body-light': '#787270',
+            'bg-cream': '#faf9f5',
+            'bg-subtle': '#f4f3f3',
+            'border-light': '#e9e8e7',
+            'border-medium': '#8f8a88',
+            'accent-gold': '#e8a41a',
+            'primary': '#262626',
+          },
+          fontFamily: {
+            sans: ['DM Sans', 'system-ui', '-apple-system', 'sans-serif'],
+          },
+        }
+      }
+    }
+  </script>
+  <style>
+    html { scroll-behavior: smooth; }
+    body { font-family: 'DM Sans', system-ui, -apple-system, sans-serif; color: #2c2827; }
+    .consent-section h3 { font-size: 15px; font-weight: 700; color: #151211; margin-bottom: 6px; }
+    .consent-section p, .consent-section li { font-size: 14px; line-height: 1.7; color: #2c2827; }
+    .consent-section a { color: #262626; text-decoration: underline; }
+    .sign-input { border: none; border-bottom: 2px solid #e9e8e7; border-radius: 0; background: transparent; padding: 8px 0; font-size: 16px; font-family: inherit; color: #151211; width: 100%; outline: none; transition: border-color 0.2s; }
+    .sign-input:focus { border-bottom-color: #262626; }
+    .sign-input::placeholder { color: #b0adab; }
+    .submit-btn { transition: all 0.2s ease; }
+    .submit-btn:hover:not(:disabled) { transform: translateY(-1px); box-shadow: 0 8px 24px rgba(38,38,38,0.2); }
+    .submit-btn:disabled { opacity: 0.5; cursor: not-allowed; }
+    .checkbox-custom { accent-color: #262626; width: 18px; height: 18px; cursor: pointer; }
+  </style>
+</head>
+<body class="bg-white min-h-screen flex flex-col">
+
+  <!-- Top Bar -->
+  <header class="bg-white border-b border-border-light sticky top-0 z-10 backdrop-blur-md bg-white/90">
+    <div class="max-w-3xl mx-auto px-6 py-4 flex items-center justify-between">
+      <a href="index.html" class="flex items-center gap-2 hover:opacity-80 transition-opacity">
+        <svg class="w-5 h-5 text-text-body-light" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7"/></svg>
+        <img src="favicon.png" alt="Engramme" class="w-6 h-6">
+        <span class="text-2xl font-bold text-text-heading tracking-tight leading-none">Engramme</span>
+      </a>
+    </div>
+  </header>
+
+  <main class="flex-1 max-w-3xl mx-auto px-6 py-12 lg:py-16 w-full">
+
+    <!-- Title block -->
+    <div class="mb-10">
+      <p class="text-sm font-medium text-text-body-light uppercase tracking-wider mb-2">Research Study</p>
+      <h1 class="text-3xl lg:text-4xl font-bold text-text-heading tracking-tight mb-2">Research Consent Form</h1>
+      <div class="flex flex-wrap gap-x-6 gap-y-1 text-sm text-text-body-light mt-4">
+        <span>Study title: <strong class="text-text-body">Memory Aid</strong></span>
+        <span>Protocol number: <strong class="text-text-body">2</strong></span>
+        <span>Activation date: <strong class="text-text-body">16 Dec 2025</strong></span>
+      </div>
+    </div>
+
+    <!-- Consent content -->
+    <div class="bg-white border border-border-light rounded-2xl p-6 sm:p-8 mb-8 space-y-8 consent-section">
+
+      <div>
+        <h3>What is the purpose of this research?</h3>
+        <p>We are interested in understanding the mechanisms that govern the encoding and retrieval of memories. For this purpose, you will be presented with personal memories while you are performing different daily tasks and you will be asked to provide feedback on those memories.</p>
+      </div>
+
+      <div>
+        <h3>Who is conducting this research and where is it being conducted?</h3>
+        <p>This research is being conducted by personnel at Memory Machines. Some tasks may be completed in person and other tasks may be completed online via a web interface.</p>
+      </div>
+
+      <div>
+        <h3>How are individuals selected for this research study?</h3>
+        <p>Participants older than 18 years of age may participate in this study.</p>
+      </div>
+
+      <div>
+        <h3>What do I have to do if I am in this research study?</h3>
+        <p>You will be asked to:</p>
+        <ol class="list-none space-y-2 mt-2">
+          <li>(1) Follow instructions to use specific software.</li>
+          <li>(2) Integrate your digital information. This may include your email, documents and other digital files. The task instructions will describe the type and amount of data required. See <a href="http://engramme.com" target="_blank">engramme.com</a> for more information on the Privacy Policy.</li>
+          <li>(3) Continue working on your regular tasks while being presented with memory cards.</li>
+          <li>(4) Provide feedback on the accuracy and usefulness of those memory cards.</li>
+        </ol>
+        <p class="mt-4">We reserved the right to terminate your participation at any time if you are not following the task instructions as defined by our automatic and predefined algorithms.</p>
+      </div>
+
+      <div>
+        <h3>Are there any risks of this research study?</h3>
+        <p>There are no risks associated with participating in this research study.</p>
+        <p class="mt-2">There is no guarantee as to the accuracy of the information presented in the memory cards and these memory cards are not meant to provide any form of suggestion or advice to you. They are only presented for you to evaluate their correctness and usefulness. See <a href="http://engramme.com" target="_blank">engramme.com</a> for more information on the Terms of Use.</p>
+        <p class="mt-2">You can pause and/or stop participating at any time.</p>
+      </div>
+
+      <div>
+        <h3>Are there any benefits of this research study?</h3>
+        <p>We are performing basic research. There is no direct benefit to you for participating in this study. Some of the memory cards presented could be useful to you. We hope to better understand human cognitive capabilities.</p>
+      </div>
+
+      <div>
+        <h3>Are there costs associated with this research study?</h3>
+        <p>There are no costs to you associated with participating in this study.</p>
+      </div>
+
+      <div>
+        <h3>Will I receive any payments?</h3>
+        <p>You will be compensated for your participation. The compensation amount will be posted and communicated to you before you start.</p>
+      </div>
+
+      <div>
+        <h3>What will happen with the information obtained as part of this research study?</h3>
+        <p>Raw data will be internally used and analyzed for research purposes via algorithms but no one will access any raw personal data. All the feedback that you provide will be analyzed by the researchers. See <a href="http://engramme.com" target="_blank">engramme.com</a> for more information on the Privacy Policy.</p>
+      </div>
+
+      <div>
+        <h3>Contact information</h3>
+        <p>I understand that I may use the following contact information to reach the appropriate office to address any questions or concerns I may have about this study.</p>
+        <p class="mt-1"><a href="mailto:contact@engramme.com">contact@engramme.com</a></p>
+      </div>
+
+      <div>
+        <h3>Documentation of informed consent and authorization</h3>
+        <p>If you do not want to participate in this study, you do not have to.</p>
+        <p>If you do want to participate, you must sign this form.</p>
+      </div>
+
+      <!-- Acknowledgement statements -->
+      <div class="bg-bg-cream rounded-xl p-5 space-y-3">
+        <p class="text-sm leading-relaxed">I have read this consent form and was given enough time to consider the decision to participate in this study.</p>
+        <p class="text-sm leading-relaxed">This research study has been satisfactorily explained to me.</p>
+        <p class="text-sm leading-relaxed">All my questions were satisfactorily answered.</p>
+        <p class="text-sm leading-relaxed">I understand that participation in this research study is voluntary and that I can withdraw at any time.</p>
+        <p class="text-sm leading-relaxed">I am signing this consent form prior to participation in any research activities.</p>
+        <p class="text-sm leading-relaxed">I give permission for my participation in this research study and for the use of associated protected and personal data.</p>
+      </div>
+
+    </div>
+
+    <!-- Signing section -->
+    <div class="bg-white border-2 border-primary rounded-2xl p-6 sm:p-8 mb-8">
+      <h2 class="text-xl font-bold text-text-heading mb-6">Sign this form</h2>
+
+      <form action="https://formsubmit.co/guha@engramme.com" id="consent-action" method="POST" id="consent-form">
+        <!-- FormSubmit config -->
+        <input type="hidden" name="_subject" value="New Consent Form Submission — Engramme Beta Evaluation">
+        <input type="hidden" name="_template" value="table">
+        <input type="hidden" name="_captcha" value="true">
+        <input type="hidden" name="_next" value="https://engrammeevaluations.vercel.app/consent-success.html">
+        <input type="text" name="_honey" style="display:none">
+
+        <div class="space-y-6">
+          <!-- Full Name -->
+          <div>
+            <label for="name" class="block text-xs font-semibold text-text-body-light uppercase tracking-wider mb-2">Full Name (Signature)</label>
+            <input type="text" id="name" name="Full Name" required placeholder="Enter your full name" class="sign-input" autocomplete="name">
+          </div>
+
+          <!-- Date -->
+          <div>
+            <label for="date" class="block text-xs font-semibold text-text-body-light uppercase tracking-wider mb-2">Date</label>
+            <input type="date" id="date" name="Date" required class="sign-input">
+          </div>
+
+          <!-- Agreement checkbox -->
+          <div class="flex gap-3 items-start pt-2">
+            <input type="checkbox" id="agree" required class="checkbox-custom mt-0.5">
+            <label for="agree" class="text-sm text-text-body leading-relaxed cursor-pointer">I have read the consent form above and agree to participate in this research study.</label>
+          </div>
+
+          <!-- Submit -->
+          <button type="submit" class="submit-btn flex items-center justify-center gap-3 w-full bg-primary text-white px-6 py-4 rounded-xl text-base font-semibold mt-4">
+            <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"/></svg>
+            Submit Signed Consent Form
+          </button>
+        </div>
+      </form>
+    </div>
+
+    <!-- Back link -->
+    <div class="text-center">
+      <a href="index.html" class="inline-flex items-center gap-2 text-sm font-medium text-text-body-light hover:text-text-heading transition-colors">
+        <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7"/></svg>
+        Back to evaluation guide
+      </a>
+    </div>
+
+  </main>
+
+  <!-- Footer -->
+  <footer class="px-6 py-6 border-t border-border-light">
+    <div class="max-w-3xl mx-auto text-center">
+      <p class="text-sm text-text-body-light">Engramme &mdash; Omniscient AI to augment human cognition</p>
+    </div>
+  </footer>
+
+  <script>
+    // Set default date to today
+    document.getElementById('date').valueAsDate = new Date();
+
+    // Load consent email from config
+    fetch('config.json')
+      .then(r => r.json())
+      .then(cfg => {
+        if (cfg.consentEmail) {
+          document.getElementById('consent-action').action = 'https://formsubmit.co/' + cfg.consentEmail;
+        }
+      })
+      .catch(() => {});
+  </script>
+
+</body>
+</html>

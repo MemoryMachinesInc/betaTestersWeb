@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Consent Submitted — Engramme</title>
+  <link rel="icon" type="image/png" href="favicon.png">
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,100..1000;1,9..40,100..1000&display=swap" rel="stylesheet">
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            'text-heading': '#151211',
+            'text-body': '#2c2827',
+            'text-body-light': '#787270',
+            'bg-cream': '#faf9f5',
+            'bg-subtle': '#f4f3f3',
+            'border-light': '#e9e8e7',
+            'accent-gold': '#e8a41a',
+            'primary': '#262626',
+          },
+          fontFamily: {
+            sans: ['DM Sans', 'system-ui', '-apple-system', 'sans-serif'],
+          },
+        }
+      }
+    }
+  </script>
+  <style>
+    body { font-family: 'DM Sans', system-ui, -apple-system, sans-serif; color: #2c2827; }
+  </style>
+</head>
+<body class="bg-white min-h-screen flex flex-col">
+
+  <header class="bg-white border-b border-border-light">
+    <div class="max-w-3xl mx-auto px-6 py-4 flex items-center">
+      <a href="index.html" class="flex items-center gap-2 hover:opacity-80 transition-opacity">
+        <img src="favicon.png" alt="Engramme" class="w-6 h-6">
+        <span class="text-2xl font-bold text-text-heading tracking-tight leading-none">Engramme</span>
+      </a>
+    </div>
+  </header>
+
+  <main class="flex-1 flex items-center justify-center px-6 py-16">
+    <div class="max-w-md w-full text-center">
+      <div class="w-16 h-16 rounded-full bg-green-100 flex items-center justify-center mx-auto mb-6">
+        <svg class="w-8 h-8 text-green-600" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/></svg>
+      </div>
+      <h1 class="text-3xl font-bold text-text-heading tracking-tight mb-3">Consent Form Submitted</h1>
+      <p class="text-text-body leading-relaxed mb-8">Thank you for signing the consent form. A copy has been sent to our team. You can now continue with the evaluation setup.</p>
+      <a href="index.html" class="inline-flex items-center gap-2 bg-primary text-white px-6 py-3 rounded-xl text-sm font-semibold hover:opacity-90 transition-opacity">
+        Continue to Evaluation Guide
+        <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"/></svg>
+      </a>
+    </div>
+  </main>
+
+  <footer class="px-6 py-6 border-t border-border-light">
+    <div class="max-w-3xl mx-auto text-center">
+      <p class="text-sm text-text-body-light">Engramme &mdash; Omniscient AI to augment human cognition</p>
+    </div>
+  </footer>
+
+</body>
+</html>
